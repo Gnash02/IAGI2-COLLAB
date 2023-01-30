@@ -14,14 +14,23 @@ import { RegisterComponent } from './Pages/register/register.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { UpdateuserComponent } from './Pages/updateuser/updateuser.component';
 import { AboutComponent } from './Pages/about/about.component';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from './Pages/profile/profile.component';
+import { JarwisService } from './service/jarwis.service';
+import { AuthService } from './service/auth.service';
+import { TokenService } from './service/token.service';
+import { BeforeLoginService } from './service/before-login.service';
+import { AfterLoginService } from './service/after-login.service';
 
 const appRoutes: Routes = [
-  {path: 'Products' , component:ProductsComponent},
-  {path: 'Home' , component:HomeComponent},
-  {path: 'Register' , component:RegisterComponent},
-  {path: 'Login' , component:LoginComponent},
-  {path : 'UpdateUser' , component:UpdateuserComponent}
+  {path: 'Products' , component:ProductsComponent , canActivate: [BeforeLoginService]},
+  {path: 'Home' , component:HomeComponent , canActivate: [BeforeLoginService]},
+  {path: 'Register' , component:RegisterComponent, canActivate: [BeforeLoginService]},
+  {path: 'Login' , component:LoginComponent, canActivate: [BeforeLoginService]},
+  {path : 'UpdateUser' , component:UpdateuserComponent},
+  {path : 'About', component: AboutComponent},
+  {path : 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]}
+
 ];
 
 @NgModule({
@@ -33,15 +42,17 @@ const appRoutes: Routes = [
     FooterComponent,
     RegisterComponent,
     LoginComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [JarwisService , AuthService, TokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -50,8 +50,12 @@ color: #373535;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 float: right;
-background-color: #CD6C4B; ;
+background-color: #CD6C4B; 
 
+}
+.submit-button:hover{
+    background-color: #373535;
+    color: #CD6C4B;
 }
 .form-control{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -59,7 +63,7 @@ background-color: #CD6C4B; ;
     height: 45px;
     color: #373535;
     border-radius: 10px;
-    background-color: #ECE6C2;
+    background-color: #ECE6C2 !important;
 }
 label{
     padding-top: 10px;

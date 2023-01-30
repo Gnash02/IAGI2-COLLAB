@@ -8,3 +8,10 @@ body {
     padding: 0px;
     margin: 0px;
 }
+.ng-invalid:not(form){
+    border-right: 4px solid #CD6C4B   !important;
+}
+
+.ng-valid:not(form){
+    border-left: 4px solid #73BCA8  !important ;
+}

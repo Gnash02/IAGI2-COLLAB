@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
+#logo{
+  height: 30px;
+  width: 30px;
+  
+}
+.logo{
+  margin: 20%;
+  
+}
 .footer{
     background: #73BCA8;
 border-top: 4px solid  #373535;
@@ -14,16 +23,21 @@ border-top: 4px solid  #373535;
 .credits{
     font-family:"Alfa Slab One";
     background: none;
+    margin-bottom: 15px;
 }
 
 .line{
-    width: 20%;
+  display: flex;
+    width: 40%;
    height: 2px;
     margin: auto;
     background:   #373535;
+    justify-content: center;
+    align-items: center;
     
- 
 }
+
+
 .icons{
     padding-top: 20px;
     display: flex;
