@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule , Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
-
-
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './Pages/products/products.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -21,6 +18,8 @@ import { AuthService } from './service/auth.service';
 import { TokenService } from './service/token.service';
 import { BeforeLoginService } from './service/before-login.service';
 import { AfterLoginService } from './service/after-login.service';
+import { AddProductComponent } from './Pages/add-product/add-product.component';
+import { ProductsService } from './service/products.service';
 
 const appRoutes: Routes = [
   {path: 'Products' , component:ProductsComponent , canActivate: [BeforeLoginService]},
@@ -29,7 +28,8 @@ const appRoutes: Routes = [
   {path: 'Login' , component:LoginComponent, canActivate: [BeforeLoginService]},
   {path : 'UpdateUser' , component:UpdateuserComponent},
   {path : 'About', component: AboutComponent},
-  {path : 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]}
+  {path : 'Profile', component: ProfileComponent, canActivate: [AfterLoginService]},
+  {path : 'Add', component: AddProductComponent},
 
 ];
 
@@ -43,7 +43,9 @@ const appRoutes: Routes = [
     RegisterComponent,
     LoginComponent,
     AboutComponent,
-    ProfileComponent
+    ProfileComponent,
+    
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ const appRoutes: Routes = [
     HttpClientModule
   ],
   exports: [RouterModule],
-  providers: [JarwisService , AuthService, TokenService],
+  providers: [JarwisService , AuthService, TokenService, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

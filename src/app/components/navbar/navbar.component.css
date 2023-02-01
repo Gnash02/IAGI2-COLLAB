@@ -10,7 +10,7 @@
    justify-content: space-between ;
    background: #ECE6C2;
    align-items: center;
-   padding: 0px 40px;
+   padding: 0px 50px;
   }
   .navbar{
   	display: flex;
@@ -23,7 +23,7 @@
  #logo{
  	height: 100px;
  	width: 100px;
- 	
+ 	margin-left: 30px;
  }
   #navbar {
     display: inline-flex;
@@ -48,72 +48,7 @@
   #navbar li a.active {
     color: #73BCA8
   }
-
-  /*
  
-color: #73BCA8
-color: #373535;
- background: #ECE6C2;
-
- @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
-  font-family: "Alfa Slab One";
-
-  
-  #navbar li a:hover::after,
-  #navbar li a.active::after {
-    content: "";
-    width: 30%;
-    height: 2px;
-    color: #373535;
-    position: absolute;
-    bottom: -4px;
-    left: 20px;
-  }
- 
-  #mobile {
-    display: none;
-  }
-  
-  #mobile i {
-    color: #373535;
-    align-items: center;
-  }
-  
- 
- @media screen and (max-width: 769px) {
-    #navbar {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      position: fixed;
-      top: 85px;
-      right: -300px;
-      width: 300px;
-      height: 100vh;
-      background: #2a3239;
-      
-      padding: 40px 0 0 10px;
-      transition: 0.3s ease-in-out;
-      z-index: 2;
-
-    }}
-    /*
-    #navbar.active {
-      right: 0px;
-    }
-  
-    #navbar li {
-      margin-bottom: 25px;
-    }
-  
-   #mobile {
-      display: block;
-    }
-      
-  }
-*/
-
 a.icon{
   display: none;
 }
@@ -127,17 +62,3 @@ a.icon{
     display: none;
   }
 }
-/*
-@media screen and (max-width: 600px) {
-  .ournav.responsive {position: relative;}
-  .ournav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .ournav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}*/
